@@ -1,4 +1,6 @@
-all    :; dapp build
-clean  :; dapp clean
+-include .env
+
+build  :; dapp build
 test   :; dapp test
-deploy :; dapp create Multicall
+clean  :; dapp clean
+deploy :; ETH_FROM=$(ETH_FROM) ETH_GAS=$(ETH_GAS) ETH_RPC_URL=$(ETH_RPC_URL) dapp create Multicall2
